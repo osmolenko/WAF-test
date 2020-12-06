@@ -1,6 +1,6 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
-import {validate} from "../components/AddCard";
+import validate from "../common/validate";
 import {submitAdd} from "../components/Card";
 import {EditCardInput} from "../styled/Card.styled";
 
@@ -16,16 +16,16 @@ class AddHotdogForm extends React.Component{
     render(){
 
         const { handleSubmit } = this.props
-        const {id, name, link, description } = this.props.data
+        const {id, name, link, description, price } = this.props.data
 
         console.log(this.props.data)
         return(
             <div>
                 <form form={id} onSubmit={handleSubmit}>
                     <Field input={{ value: name}} name="name" type="text" component={renderField} label="Name"/>
-                    <Field name="price" type="number" component={renderField} label="Price"/>
-                    <Field name="description" type="text" component={renderField} label="Description"/>
-                    <Field value={link} name="link" type="text" component={renderField} label="Link"/>
+                    <Field input={{ value: price}} name="price" type="number" component={renderField} label="Price"/>
+                    <Field input={{ value: description}} type="text" component={renderField} label="Description"/>
+                    <Field input={{ value: link}} name="link" type="text" component={renderField} label="Link"/>
                     <Field input={{ value: id}} readonly type="text" component={renderField} label="ID"/>
                 </form>
             </div>

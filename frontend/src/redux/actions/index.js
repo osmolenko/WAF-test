@@ -20,12 +20,14 @@ export function getData() {
 };
 
 export function addHotdog(payload) {
+    console.log('ACTION')
+    console.log(payload)
     return function(dispatch){
         return fetch('http://localhost:3000/hotdog/create', urlEncode('POST', payload))
             .then(response => response.json())
-            .then(json => {
-                dispatch({ type: ADD_HOTDOG, payload: json });
-            });
+            .then(json => {dispatch({ type: ADD_HOTDOG, payload: json });})
+            .then(json => console.log(json));
+
     }
 };
 

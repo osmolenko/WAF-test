@@ -24,44 +24,25 @@ class Card extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            activeTab: 1
+            activeTab: 2
         }
     }
     render(){
-
-        function Show(sw){
-
-            if (sw === 1){
-                return(
-                    <div>
-                        <CardInfoDiv>
-                            <CardH1>{name}</CardH1>
-                            <CardPrice>{price} UAH</CardPrice>
-                            <CardInfo>{description}</CardInfo>
-                        </CardInfoDiv>
-                        <CardButton onClick={()=> sw = 2}>Edit</CardButton>
-                        {/*<CardButton onClick={()=>this.setState({ activeTab : 2})}>Edit</CardButton>*/}
-                        <CardButton onClick={()=>this.props.delHotDog({id})}>Delete</CardButton>
-                    </div>
-                )
-            } else{
-                return(
-                <CardInfoDiv>
-                        <EditHotdogForm data={{link,name,price,description,id}}/>
-                        <CardButton onClick={()=>this.setState({ activeTab : 2})}>Confirm</CardButton>
-                        <CardButton onClick={()=> sw = 1}>Confirm</CardButton>
-
-                    {/*<CardButton onClick={()=>this.setState({ activeTab : 1})}>Close</CardButton>*/}
-                </CardInfoDiv>
-                )
-            }
-        }
 
         const {link, name, price, description, id} = this.props
         return(
             <CardDiv>
                 <CardImg src={link}/>
-                <Show/>
+                <div>
+                    <CardInfoDiv>
+                        <CardH1>{name}</CardH1>
+                        <CardPrice>{price} UAH</CardPrice>
+                        <CardInfo>{description}</CardInfo>
+                    </CardInfoDiv>
+                    <CardButton>Edit</CardButton>
+                    {/*<CardButton onClick={()=>this.setState({ activeTab : 2})}>Edit</CardButton>*/}
+                    <CardButton onClick={()=>this.props.delHotDog({id})}>Delete</CardButton>
+                </div>
 
 
             </CardDiv>

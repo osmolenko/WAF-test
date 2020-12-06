@@ -7,6 +7,10 @@ const initialState = {
 function hotdogReducer(state = initialState, action) {
     switch(action.type){
         case ADD_HOTDOG:
+            console.log('REDUCER')
+            console.log(action.payload)
+            console.log('REDUCER')
+
             return Object.assign({}, state, {
                 hotdogs: state.hotdogs.concat(action.payload)
             });
