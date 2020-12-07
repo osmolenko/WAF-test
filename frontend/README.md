@@ -15,8 +15,6 @@ Done:
 - Actions to work with API
 - Logging all actions
 - Validation for input fields
-
-Problems:
 - Forms
 
 ## Installation

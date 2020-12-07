@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { HotdogEntity } from './hotdog/hotdog.entity';
 import { Connection } from 'typeorm';
@@ -25,8 +23,8 @@ import { EasyconfigModule } from 'nestjs-easyconfig';
     }),
     HotdogModule,
   ],
-  controllers: [AppController, HotdogController],
-  providers: [AppService, HotdogService],
+  controllers: [HotdogController],
+  providers: [HotdogService],
 })
 export class AppModule {
   constructor(private connection: Connection) {}

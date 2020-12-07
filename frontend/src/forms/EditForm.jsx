@@ -3,8 +3,8 @@ import {Field, reduxForm, submit} from "redux-form";
 import {CardButton, EditCardInput} from "../styled/Card.styled";
 import {connect} from "react-redux";
 import {getSingleHotdog, updateHotdog} from "../redux/actions";
-import {AddCardButton} from "../styled/AddCard.styled";
 
+//поле формы
 const renderField = ({  readonly, input, label, type, meta: { touched, error } }) => (
     <div>
         <EditCardInput {...input} placeholder={label} disabled={readonly} type={type}  />
@@ -20,6 +20,7 @@ function submitEdit(values){
 
 class EditForm extends React.Component {
 
+    //Получение данных хот-дога для получения initialValue
     componentDidMount() {
         this.props.getSingleHotdog(this.props.data.id)
     }
@@ -44,6 +45,7 @@ class EditForm extends React.Component {
     }
 }
 
+//Реорганизация данных в нужные для redux-form
 function mapStateToProps(state) {
     return {
         initialValues: {
@@ -58,7 +60,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getSingleHotdog: id => dispatch(getSingleHotdog(id)),
+        getSingleHotdog: id => dispatch(getSingleHotdog(id)), //Получение 1 хот-дога
         edit: hotdog => dispatch(updateHotdog(hotdog)), //Добавление нового хот-дога
         submit: () => dispatch(submit('editCard')) //Подтверждение формы
     }

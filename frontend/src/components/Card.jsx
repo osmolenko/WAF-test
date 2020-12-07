@@ -5,16 +5,17 @@ import {
     CardPrice,
     CardInfo,
     CardDiv,
-    CardButton, EditCardInput
+    CardButton
 } from '../styled/Card.styled'
 import {connect} from "react-redux";
-import {delHotdog, tabClicked} from "../redux/actions";
+import {delHotdog} from "../redux/actions";
 import React from 'react';
 import EditForm from '../forms/EditForm'
 
 
 class Card extends React.Component{
 
+    //рендер по кнопке
     constructor(props) {
         super(props);
         this.state = {
@@ -52,11 +53,6 @@ class Card extends React.Component{
     }
 }
 
-function mapStateToProps(state) {
-    return {
-    }
-}
-
 function mapDispatchToProps(dispatch) {
     return {
         delHotDog: hotdog => dispatch(delHotdog(hotdog))
@@ -66,7 +62,7 @@ function mapDispatchToProps(dispatch) {
 
 
 Card = connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(Card)
 

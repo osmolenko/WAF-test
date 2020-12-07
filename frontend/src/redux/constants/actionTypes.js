@@ -6,4 +6,3 @@ export const GET_SINGLE_HOTDOG = 'GET_SINGLE_HOTDOG';
 
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const HIDE_MODAL = 'HIDE_MODAL';
-export const TAB_CLICKED = 'TAB_CLICKED';

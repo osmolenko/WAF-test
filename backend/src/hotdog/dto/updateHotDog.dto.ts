@@ -1,7 +1,6 @@
-import {IsInt, IsNotEmpty, IsString} from "class-validator";
+import {IsInt, IsNotEmpty, IsString} from 'class-validator';
 
-
-export class updateHotDogDto{
+export class updateHotDogDto {
     @IsString()
     @IsNotEmpty()
     id: string;

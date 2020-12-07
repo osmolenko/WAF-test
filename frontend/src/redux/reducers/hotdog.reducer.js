@@ -41,12 +41,9 @@ function hotdogReducer(state = initialState, action) {
                 ...state,
                 hotdogs: upd
             }
-
-
-
-
+        default:
+            return state;
     }
-    return state;
 };
 
 export default hotdogReducer;

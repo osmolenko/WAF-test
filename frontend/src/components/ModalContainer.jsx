@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import {closeModal} from "../redux/actions";
 import {AddCardBG} from "../styled/AddCard.styled";
 
