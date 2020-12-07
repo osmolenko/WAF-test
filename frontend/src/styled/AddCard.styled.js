@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const AddCardBG = styled.div`
+  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import {closeModal} from "../redux/actions";
 import {AddCardBG} from "../styled/AddCard.styled";
 
-class ModalContainer extends Component {
+class ModalContainer extends React.Component {
 
     closeModal = () => {
         const { closeModal, onClose = () => {} } = this.props;

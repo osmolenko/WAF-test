@@ -4,7 +4,7 @@ import AddCard from "../components/AddCard";
 import {connect} from "react-redux";
 import {closeModal, openModal} from "../redux/actions";
 import ModalContainer from "../components/ModalContainer";
-import * as React from "react";
+import React from "react";
 
 class MainPage extends React.Component{
     render(){

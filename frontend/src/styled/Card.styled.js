@@ -15,6 +15,8 @@ export const CardInfoDiv = styled.div`
 export const CardImg = styled.img`
     width: 100%;
     max-width: 18rem;
+    height: 15rem;
+    object-fit: cover;
     border-radius: 8px 8px 0 0;
 `
 

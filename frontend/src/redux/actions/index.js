@@ -1,7 +1,7 @@
 import {
     ADD_HOTDOG,
     CHECK_HOTDOG, DEL_HOTDOG,
-    GET_HOTDOG,
+    GET_HOTDOG, GET_SINGLE_HOTDOG,
     HIDE_MODAL,
     SHOW_MODAL,
     TAB_CLICKED,
@@ -62,9 +62,9 @@ export function closeModal() {
     };
 }
 
-export function tabClicked(activeTab){
+export function getSingleHotdog(id) {
     return {
-        type: TAB_CLICKED,
-        activeTab: activeTab
-    }
+        type: GET_SINGLE_HOTDOG,
+        payload: id
+    };
 }

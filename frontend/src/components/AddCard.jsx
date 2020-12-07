@@ -2,7 +2,7 @@ import React from 'react';
 import {AddCardButton, AddCardDiv, AddCardH1, AddCardClose, AddCardInput} from "../styled/AddCard.styled";
 import {addHotdog} from "../redux/actions";
 import {connect} from "react-redux";
-import {Field, Form, reduxForm, submit} from "redux-form";
+import {Field, reduxForm, submit} from "redux-form";
 import validate from "../common/validate";
 
 //Поле форм

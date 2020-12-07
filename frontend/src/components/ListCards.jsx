@@ -18,8 +18,9 @@ export class ConnectedList extends React.Component{
 
         return(
             <CardsList>
-                {this.props.hotdogs.map(el => (
+                {this.props.hotdogs.map((el, index) => (
                     <Card
+                        index={index}
                         key={el.id}
                         id={el.id}
                         link={el.link}

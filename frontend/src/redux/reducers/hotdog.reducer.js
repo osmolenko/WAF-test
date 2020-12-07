@@ -1,16 +1,13 @@
-import {ADD_HOTDOG, DEL_HOTDOG, GET_HOTDOG, UPDATE_HOTDOG} from "../constants/actionTypes";
+import {ADD_HOTDOG, DEL_HOTDOG, GET_HOTDOG, GET_SINGLE_HOTDOG, UPDATE_HOTDOG} from "../constants/actionTypes";
 
 const initialState = {
-    hotdogs: []
+    hotdogs: [],
+    hotdog: {}
 }
 
 function hotdogReducer(state = initialState, action) {
     switch(action.type){
         case ADD_HOTDOG:
-            console.log('REDUCER')
-            console.log(action.payload)
-            console.log('REDUCER')
-
             return Object.assign({}, state, {
                 hotdogs: state.hotdogs.concat(action.payload)
             });
@@ -19,6 +16,14 @@ function hotdogReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 hotdogs: state.hotdogs.concat(action.payload)
             });
+
+        case GET_SINGLE_HOTDOG:
+            const idx = state.hotdogs.indexOf(state.hotdogs.find(hotdog => hotdog.id === action.payload))
+            const single = state.hotdogs[idx]
+            return {
+                ...state,
+                hotdog: single
+            }
 
         case DEL_HOTDOG:
             const del = state.hotdogs
